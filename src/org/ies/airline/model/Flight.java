@@ -18,6 +18,36 @@ public class Flight {
         this.passengers = passengers;
     }
 
+    public void showInfo() {
+        System.out.println(" vuelo : " + flightNumber +
+                " origen : " + origin +
+                "destino : " + destination +
+                " numero de puerta : " + gateNumber +
+                " pasajero : ");
+
+        for (var passenger : passengers) {
+            passenger.showInfo();
+        }
+    }
+
+    public boolean hasPassenger(String nif) {
+        for (var passenger : passengers) {
+            if (passenger.getNif().equals(nif)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Passenger findPassenger(String nif) {
+        for (var passenger : passengers) {
+            if (passenger.getNif().equals(nif)) {
+                return passenger;
+            }
+        }
+        return null;
+    }
+
     public int getFlightNumber() {
         return flightNumber;
     }

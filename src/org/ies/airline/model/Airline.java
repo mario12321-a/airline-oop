@@ -12,6 +12,18 @@ public class Airline {
         this.flights = flights;
     }
 
+    public void showFlights() {
+        System.out.println("Nombre de la aerolinea: " + name );
+
+        for (var flight : flights) {
+            flight.showInfo();
+        }
+    }
+
+    public void showFlightsFromOrigin(String origin){
+
+    }
+
     public String getName() {
         return name;
     }
